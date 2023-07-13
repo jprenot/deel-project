@@ -23,5 +23,6 @@ select
         when acceptance.currency = 'GPB' then GPB_rate
     end as numeric)                                                 as conv_rate
 
-FROM `pro-visitor-392620.deel.gp_acceptance` acceptance
-left join rates on acceptance.ref = rates.ref
+FROM {{ ref('gp_acceptance_base') }} acceptance
+left join rates 
+    on acceptance.ref = rates.ref
