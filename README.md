@@ -9,6 +9,7 @@ I kept the modeling simple - the _base models just rename and cast some fields, 
   - adding an int layer where we delete bad records (in this case it would probably be status = false)
   - add date fields to transactions_xf like quarter, fiscal quarter, month, etc. This can be helpful in Tableau/Looker later on, but is probably outside the scope of what's necessary here
   - create macros or tests. Unique and non-null tests for the id fields would be best practice in production, as well as a custom test to see if globepay has added any new currencies. I would not have been able to turn this in today if I tried to come up with a clever macro to dynamically parse the rates field.
+  - make gp_source.yml and gp_models.yml files, create a source macro, and use the models yml for documentation. 
 
 ## Part 2
 1. The acceptance rate hangs right around 70% for the most part, spiking up to 75% in some weeks, and down to as low as 63% in others.
